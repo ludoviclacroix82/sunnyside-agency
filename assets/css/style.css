@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-size: 16px default; }
+
+a {
+  text-decoration: none; }
+
+a:hover, a:visited, a:focus {
+  color: #000; }
+
+/* Color Primary */
+/*(graphic design text)*/
+/*(photography text)*/
+/*(footer)*/
+/* Color Neutral */
+body {
+  font-size: 18px;
+  width: 100%;
+  max-width: 1440px;
+  background-color: #c0c0c0;
+  margin: 0 auto; }
+
+.barlow-semibold, header nav .nav-link, footer article ul li {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-style: normal; }
+
+.Fraunces-bold, header .wrap, main .Transform-your-brand article p, main .Stand-out-to-the-right-audience article p, main .Transform-your-brand article button, main .Stand-out-to-the-right-audience article button, main .graphic-photography article article .title, main .graphic-photography article article p, main .testimonials .title, main .testimonials .cards .card .card-content, main .testimonials .cards .card .card-name, main .testimonials .cards .card .card-job {
+  font-family: "Fraunces", sans-serif;
+  font-weight: 700;
+  font-style: normal; }
+
+.Fraunces-black, main .Transform-your-brand article .title, main .Stand-out-to-the-right-audience article .title {
+  font-family: "Fraunces", sans-serif;
+  font-weight: 900;
+  font-style: normal; }
+
+header {
+  background-color: #3dbfff;
+  height: 550px;
+  display: flex;
+  flex-direction: column; }
+  header nav {
+    width: 100%;
+    height: 80px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 2; }
+    header nav .nav-logo, header nav .nav-link {
+      flex: 1;
+      width: 50%;
+      display: flex;
+      align-items: center; }
+    header nav .nav-logo picture {
+      padding: 0 30px; }
+    header nav .nav-link {
+      font-size: 1rem;
+      text-transform: capitalize;
+      color: white;
+      text-align: right;
+      padding-right: 30px;
+      display: flex;
+      justify-content: right; }
+      @media (max-width: 480px) {
+        header nav .nav-link {
+          display: none !important; } }
+      header nav .nav-link ul {
+        list-style-type: none;
+        line-height: 30px;
+        height: 40px; }
+        header nav .nav-link ul li {
+          margin-right: 40px;
+          float: left; }
+        header nav .nav-link ul .contact {
+          background-color: white;
+          color: #818498;
+          width: 100px;
+          padding: 5px 0;
+          border-radius: 25px;
+          text-align: center;
+          position: relative;
+          bottom: 5px; }
+    header nav .nav-mobile {
+      width: 50px;
+      padding: 30px 10px;
+      display: none; }
+      @media (max-width: 480px) {
+        header nav .nav-mobile {
+          display: block !important; } }
+  header figure {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    z-index: 1; }
+    header figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+  header .wrap {
+    text-transform: uppercase;
+    z-index: 3;
+    position: absolute;
+    width: 800px;
+    height: 350px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    @media (max-width: 480px) {
+      header .wrap {
+        width: 50%;
+        font-size: 2rem;
+        top: 35%; } }
+    header .wrap figure {
+      width: 36px;
+      height: 114px;
+      align-items: center;
+      margin-top: 70px; }
+
+main {
+  background-color: white; }
+  main .Transform-your-brand, main .Stand-out-to-the-right-audience, main .graphic-photography, main .testimonials, main .gallery {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    @media (max-width: 480px) {
+      main .Transform-your-brand, main .Stand-out-to-the-right-audience, main .graphic-photography, main .testimonials, main .gallery {
+        flex-direction: column-reverse;
+        height: none; } }
+  main .Transform-your-brand article, main .Transform-your-brand figure, main .Stand-out-to-the-right-audience article, main .Stand-out-to-the-right-audience figure, main .graphic-photography article, main .graphic-photography article figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%; }
+    @media (max-width: 480px) {
+      main .Transform-your-brand article, main .Transform-your-brand figure, main .Stand-out-to-the-right-audience article, main .Stand-out-to-the-right-audience figure, main .graphic-photography article, main .graphic-photography article figure {
+        width: 100%;
+        height: 400px; } }
+  main .Transform-your-brand article .title, main .Stand-out-to-the-right-audience article .title {
+    color: #23303e;
+    width: 50%; }
+  main .Transform-your-brand article p, main .Stand-out-to-the-right-audience article p {
+    color: #23303e;
+    width: 50%;
+    font-size: 0.9rem;
+    font-weight: normal;
+    padding: 20px 0; }
+  main .Transform-your-brand article button, main .Stand-out-to-the-right-audience article button {
+    display: block;
+    margin-top: 50px;
+    background-color: white;
+    border: 0;
+    text-transform: uppercase;
+    width: 100px; }
+  main .Transform-your-brand article .title {
+    text-transform: capitalize;
+    font-size: 2rem; }
+  main .Transform-your-brand article button {
+    background: linear-gradient(0deg, #fad400 0%, white 40%); }
+  main .Transform-your-brand figure {
+    height: 500px; }
+    @media (max-width: 480px) {
+      main .Transform-your-brand figure {
+        width: 100%;
+        height: 300px; } }
+    main .Transform-your-brand figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 50%; }
+  main .Stand-out-to-the-right-audience {
+    flex-direction: row-reverse; }
+    @media (max-width: 480px) {
+      main .Stand-out-to-the-right-audience {
+        flex-direction: column-reverse; } }
+    main .Stand-out-to-the-right-audience article .title {
+      text-transform: capitalize;
+      font-size: 2rem; }
+    main .Stand-out-to-the-right-audience article button {
+      background: linear-gradient(0deg, #fe7867 0%, white 40%); }
+    main .Stand-out-to-the-right-audience figure {
+      height: 500px; }
+      @media (max-width: 480px) {
+        main .Stand-out-to-the-right-audience figure {
+          width: 100%;
+          height: 400px; } }
+      main .Stand-out-to-the-right-audience figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+  main .graphic-photography .graphic {
+    color: #25564b; }
+  main .graphic-photography .photography {
+    color: #19536b; }
+  main .graphic-photography article {
+    display: block;
+    height: 500px; }
+    main .graphic-photography article figure {
+      height: 500px;
+      width: 100%; }
+      main .graphic-photography article figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+    main .graphic-photography article article {
+      position: relative;
+      bottom: 200px;
+      margin: 0 auto;
+      text-align: center; }
+      main .graphic-photography article article .title {
+        font-size: 1.2rem;
+        padding: 20px 0; }
+      main .graphic-photography article article p {
+        font-size: 0.9rem;
+        font-weight: normal; }
+  main .testimonials {
+    flex-direction: column; }
+    main .testimonials .title {
+      color: #818498;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4rem;
+      padding: 50px 0; }
+    main .testimonials .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 300px);
+      gap: 20px; }
+      main .testimonials .cards .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        main .testimonials .cards .card .card-user {
+          text-align: center;
+          padding: 50px 0; }
+          main .testimonials .cards .card .card-user figure {
+            width: 50px;
+            height: 50px; }
+            main .testimonials .cards .card .card-user figure img {
+              width: 100%;
+              height: 100%;
+              border: 0;
+              border-radius: 50%; }
+        main .testimonials .cards .card .card-content {
+          font-size: 0.8rem;
+          color: #818498;
+          line-height: 1.3rem;
+          text-transform: capitalize;
+          padding: 0 0 30px 0; }
+        main .testimonials .cards .card .card-name {
+          font-size: 1rem;
+          color: #23303e;
+          text-transform: capitalize; }
+        main .testimonials .cards .card .card-job {
+          font-size: 0.8rem;
+          color: #a7abae;
+          text-transform: capitalize;
+          font-weight: normal; }
+  main .gallery {
+    height: 400px; }
+    main .gallery article {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: 100%;
+      height: 400px; }
+      main .gallery article figure {
+        height: 400px; }
+        main .gallery article figure img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+
+footer {
+  width: auto;
+  height: 250px;
+  background-color: #90d4c5;
+  padding: 50px; }
+  footer article {
+    width: 30%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center; }
+    footer article ul {
+      list-style-type: none;
+      padding: 50px 0; }
+      footer article ul li {
+        float: left;
+        margin-left: 50px;
+        display: block; }
+    footer article .link a {
+      color: #458c7e;
+      font-size: 1rem; }
+    footer article #logo-footer path {
+      fill: #458c7e !important; }
+
+/*# sourceMappingURL=style.css.map */
