@@ -28,7 +28,7 @@ body{
   }
 
 header{
-    $headerHeigth:550px !default;
+    $headerHeigth:800px !default;
 
     background-color: hsl(199.79deg, 100% ,61.96%);
     height: $headerHeigth;
@@ -37,11 +37,13 @@ header{
 
     nav{
         width: 100%;
-        height: 80px;
+        height: 56px;
         padding: 20px 0;
         display: flex;
         flex-direction: row;
         position: relative;
+        top: 34px;
+        left: 40px;
         z-index: 2;
 
         %navDefault{
@@ -78,16 +80,24 @@ header{
                 li{
                     margin-right: 40px;
                     float: left;
+                    line-height: 1.38rem;
+                    letter-spacing: 0.007rem; 
                 }
                 .contact{
+                    @extend .Fraunces-bold;
                     background-color: $neutralWhite ;
-                    color:$neutralDarkGrayishBlue ;
-                    width: 100px;
-                    padding: 5px 0;
+                    color:$neutralVeryDarkDesaturatedBlue ;
+                    width: 140px;
+                    height: 40px;
                     border-radius: 25px;
-                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 0.83rem; 
+                    line-height: 1.38rem;
+                    letter-spacing: 0.006rem; 
                     position: relative;
-                    bottom: 5px;                    
+                    bottom: 10px;
                 }
             }
         }   
@@ -103,7 +113,7 @@ header{
     }
     figure{
         width: 100%;
-        height: 450px;
+        height: $headerHeigth;
         position: relative;
         z-index: 1;
         img{
@@ -113,18 +123,19 @@ header{
         }
     }
     .wrap{
-        @extend .Fraunces-bold;
+        @extend .Fraunces-black;
         text-transform: uppercase;
         z-index: 3;
         position: absolute;
-        width: 800px;
-        height: 350px;
-        top:45%;
+        width: 750px;
+        height: 69;
+        top:65%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-        font-size: 3rem;
-        letter-spacing: 0.5rem;;
+        font-size: 3.1rem;
+        letter-spacing: 0.48rem;
+        line-height: 3.86rem;
         color: $neutralWhite;
         display: flex;
         flex-direction: column;
@@ -137,8 +148,8 @@ header{
         }
 
         figure {
-            width: 36px;
-            height: 114px;
+            width: 30px;
+            height: 107px;
             align-items: center;
             margin-top: 70px;
         }
@@ -147,7 +158,7 @@ header{
 
 main{
     background-color: $neutralWhite;
-    $sectionHeight:500px;
+    $sectionHeight:600px;
 
     %section{
         width: auto;
@@ -177,24 +188,32 @@ main{
         @extend .Fraunces-black;
         color: $neutralVeryDarkDesaturatedBlue;
         width: 50%;
+        font-size: 2.2rem;
+        line-height:2.74rem; 
+        letter-spacing: 0.016rem;
     }
     %p{
-        @extend .Fraunces-bold;
-        color: $neutralVeryDarkDesaturatedBlue;
+        @extend .barlow-semibold ;
+        color: $neutralDarkGrayishBlue;
         width: 50%;
-        font-size: 0.9rem;
+        font-size: 1rem;
         font-weight: normal;
         padding: 20px 0;
+        line-height: 1.66rem;
+        letter-spacing: 0.007rem;
 
     }
     %button{
-        @extend .Fraunces-bold ;
-        display: block;
+        @extend .Fraunces-black;
         margin-top:50px;
         background-color: $neutralWhite;
         border: 0;
         text-transform: uppercase;
-        width: 100px;
+        width: 150px;
+        font-size: 0.83rem;
+        display: block;
+        line-height: 1.38rem;
+        letter-spacing: 0.055rem;
     }
 
     .Transform-your-brand{
@@ -207,7 +226,6 @@ main{
             .title{
                 @extend %title;
                 text-transform:capitalize;
-                font-size: 2rem;
             }
             p{
                 @extend %p;
@@ -221,6 +239,7 @@ main{
         figure{
             @extend %item;
             height: $sectionHeight;
+            
             @include Mobile{
                 width: 100%;
                 height:300px;
@@ -230,7 +249,7 @@ main{
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                object-position: 50% 50%;
+                object-position: center;
             }
         }
     }
@@ -248,7 +267,6 @@ main{
             .title{
                 @extend %title;
                 text-transform:capitalize;
-                font-size: 2rem;
             }
             p{
                 @extend %p;
@@ -306,14 +324,17 @@ main{
                 text-align: center;
 
                 .title{
-                    @extend .Fraunces-bold;
-                    font-size: 1.2rem;
+                    @extend .Fraunces-black;
+                    letter-spacing: 0.01rem;
+                    line-height: 1.91rem;
+                    font-size: 1.4rem;
                     padding: 20px 0;
                 }
                 p{
-                    @extend .Fraunces-bold;
-                    font-size: 0.9rem;
-                    font-weight: normal;
+                    @extend .barlow-semibold;
+                    font-size: 0.88rem;
+                    letter-spacing: 0.006rem;
+                    line-height: 1.5rem;
                 }
             }
         }
@@ -323,21 +344,25 @@ main{
     .testimonials{
         @extend %section;
         flex-direction: column;
-        height: 500px;
+        height: 550px;
 
         .title{
-            @extend .Fraunces-bold;
-            color: $neutralDarkGrayishBlue;
-            font-size: 1rem;
+            @extend .Fraunces-black;
+            color: $neutralGrayishBlue;
+            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 0.4rem;
-            padding: 50px 0;
+            letter-spacing: 0.27rem;
+            line-height: 1.37rem;
+            font-weight: normal;
+            padding: 10px 0;
         }
 
         .cards{
             display: grid ;
             grid-template-columns: repeat(3,300px);
             gap:50px;
+            width: 72%;
+            margin: 0 auto;
             
 
             .card{
@@ -349,43 +374,49 @@ main{
                     text-align: center;
                     padding: 50px 0;
                     figure{
-                        width: 50px;
-                        height: 50px;
+                        width: 72px;
+                        height: 72px;
                         img{
                             width: 100%;
                             height: 100%;
                             border:0;
+                            object-fit: cover;
                             border-radius: 50%;
                         }
                     }
                 }
                 .card-content{
-                    @extend .Fraunces-bold;
-                    font-size: 0.8rem;
-                    color:$neutralDarkGrayishBlue;
+                    @extend .barlow-semibold;
+                    font-size: 1rem;
+                    color:$neutralVeryDarkGrayishBlue;
                     line-height: 1.3rem;
                     text-transform: capitalize;
                     padding: 0 0 30px 0;
+                    line-height: 1.77rem;
+                    letter-spacing:0.007rem; 
                 }
                 .card-name{
-                    @extend .Fraunces-bold;
+                    @extend .Fraunces-black;
                     font-size: 1rem;
                     color:$neutralVeryDarkDesaturatedBlue;
                     text-transform: capitalize;
+                    line-height: 1.23rem;
+                    letter-spacing: 0.007rem;
                 }
                 .card-job{
-                    @extend .Fraunces-bold;
-                    font-size: 0.8rem;
+                    @extend .barlow-semibold;
+                    font-size: 0.77rem;
                     color:$neutralGrayishBlue;
                     text-transform: capitalize;
-                    font-weight: normal;
+                    line-height: 1.38rem;
+                    letter-spacing: 0.005rem;
                 }
             }
         }
     }
     .gallery{
         @extend %section;
-        $galleryHeight: 400px;
+        $galleryHeight: 447px;
         height: $galleryHeight;
 
         article{
@@ -407,36 +438,47 @@ main{
 
 footer{
     width: auto;
-    height: 250px;
+    height: 350px;
     background-color: $primaryFooterBackground ;
-    padding: 50px;
+    justify-content: center;
+    align-items: center;
 
     article{
-        width: 30%;
+        width: 297px;
+        height: 206px;
         margin: 0 auto;
         display: flex;
         flex-direction: column; 
         margin: 0 auto;
         justify-content: center;
         align-items: center;
+        padding: 50px 0px;
 
         
             ul{
+                width: 100%;
+                height: 25px;
                 list-style-type: none;
-                padding: 50px 0;
+                margin: 25px 0px;
+                
                 
                 li{
                     @extend .barlow-semibold;
                     float: left;
-                    margin-left: 50px;
+                    margin-left: 30px;
                     display: block;
+                    font-size: 1rem;
+                    line-height: 1.38rem;
+                    letter-spacing: 0.007rem;
                 }
             }
             .link{
                 a{
                     color: $primaryDarkModerateCyan; 
                     font-size: 1rem;
-                 }
+                    line-height: 1.38rem;
+                    letter-spacing: 0.007rem;
+                }
             }
             .logo{
                 img{
