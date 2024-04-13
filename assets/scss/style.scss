@@ -45,7 +45,7 @@ header{
         z-index: 2;
 
         %navDefault{
-            flex: 1;
+            
             width: 50%;
             display: flex;
             align-items: center;
@@ -74,8 +74,7 @@ header{
             justify-content: right;
             ul{
                 list-style-type: none;
-                line-height: 30px;
-                height: 40px;
+                line-height: 40px;
                 li{
                     margin-right: 40px;
                     float: left;
@@ -438,9 +437,11 @@ footer{
                  }
             }
             
-            #logo-footer path{
-                        fill:$primaryDarkModerateCyan !important;
+           .logo{
+                img{
+                    filter:hue-rotate(167deg) saturate(40%) brightness(24%);
                 }
+           }
     }
 }
 
