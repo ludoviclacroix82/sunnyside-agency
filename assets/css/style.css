@@ -25,7 +25,7 @@ body {
   background-color: #c0c0c0;
   margin: 0 auto; }
 
-.barlow-semibold, header nav .nav-link, main .Transform-your-brand article p, main .Stand-out-to-the-right-audience article p, main .graphic-photography article article p, main .testimonials .cards .card .card-content, main .testimonials .cards .card .card-job, footer article ul li {
+.barlow-semibold, header nav .nav-link, main .Transform-your-brand article p, main .Stand-out-to-the-right-audience article p, main .graphic-photography article article p, main .testimonials .cards .card .card-content, main .testimonials .cards .card .card-job, footer article .link ul li, footer article .follow ul li {
   font-family: "Barlow", sans-serif;
   font-weight: 600;
   font-style: normal; }
@@ -35,7 +35,7 @@ body {
   font-weight: 700;
   font-style: normal; }
 
-.Fraunces-black, header .wrap, main .Transform-your-brand article .title, main .Stand-out-to-the-right-audience article .title, main .Transform-your-brand article button, main .Stand-out-to-the-right-audience article button, main .graphic-photography article article .title, main .testimonials .title, main .testimonials .cards .card .card-name {
+.Fraunces-black, header .wrap, main .Transform-your-brand article h2, main .Stand-out-to-the-right-audience article h2, main .Transform-your-brand article button, main .Stand-out-to-the-right-audience article button, main .graphic-photography article article h2, main .testimonials h2, main .testimonials .cards .card .card-name {
   font-family: "Fraunces", sans-serif;
   font-weight: 900;
   font-style: normal; }
@@ -46,15 +46,14 @@ header {
   display: flex;
   flex-direction: column; }
   header nav {
-    width: 100%;
+    width: 95%;
     height: 56px;
-    padding: 20px 0;
     display: flex;
     flex-direction: row;
     position: relative;
     top: 34px;
-    left: 40px;
-    z-index: 2; }
+    z-index: 2;
+    margin: 0 auto; }
     header nav .nav-logo, header nav .nav-link {
       width: 50%;
       display: flex;
@@ -66,17 +65,19 @@ header {
       text-transform: capitalize;
       color: white;
       text-align: right;
-      padding-right: 30px;
       display: flex;
       justify-content: right; }
-      @media (max-width: 480px) {
+      @media (max-width: 640px) {
+        header nav .nav-link {
+          display: none !important; } }
+      @media (max-width: 768px) {
         header nav .nav-link {
           display: none !important; } }
       header nav .nav-link ul {
         list-style-type: none;
         line-height: 40px; }
         header nav .nav-link ul li {
-          margin-right: 40px;
+          margin-left: 40px;
           float: left;
           line-height: 1.38rem;
           letter-spacing: 0.007rem; }
@@ -96,15 +97,23 @@ header {
           bottom: 10px; }
     header nav .nav-mobile {
       width: 50px;
-      padding: 30px 10px;
       display: none; }
-      @media (max-width: 480px) {
+      @media (max-width: 640px) {
         header nav .nav-mobile {
-          display: block !important; } }
+          display: flex !important;
+          justify-content: right;
+          align-items: center;
+          width: 45%; } }
+      @media (max-width: 768px) {
+        header nav .nav-mobile {
+          display: flex !important;
+          justify-content: right;
+          align-items: center;
+          width: 45%; } }
   header figure {
     width: 100%;
     height: 800px;
-    position: relative;
+    position: absolute;
     z-index: 1; }
     header figure img {
       width: 100%;
@@ -127,7 +136,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center; }
-    @media (max-width: 480px) {
+    @media (max-width: 640px) {
       header .wrap {
         width: 50%;
         font-size: 2rem;
@@ -146,7 +155,7 @@ main {
     flex-direction: row;
     justify-content: center;
     align-items: center; }
-    @media (max-width: 480px) {
+    @media (max-width: 640px) {
       main .Transform-your-brand, main .Stand-out-to-the-right-audience, main .graphic-photography, main .testimonials, main .gallery {
         flex-direction: column-reverse;
         height: none; } }
@@ -156,11 +165,11 @@ main {
     align-items: center;
     justify-content: center;
     width: 50%; }
-    @media (max-width: 480px) {
+    @media (max-width: 640px) {
       main .Transform-your-brand article, main .Transform-your-brand figure, main .Stand-out-to-the-right-audience article, main .Stand-out-to-the-right-audience figure, main .graphic-photography article, main .graphic-photography article figure {
         width: 100%;
         height: 400px; } }
-  main .Transform-your-brand article .title, main .Stand-out-to-the-right-audience article .title {
+  main .Transform-your-brand article h2, main .Stand-out-to-the-right-audience article h2 {
     color: #23303e;
     width: 50%;
     font-size: 2.2rem;
@@ -184,13 +193,13 @@ main {
     display: block;
     line-height: 1.38rem;
     letter-spacing: 0.055rem; }
-  main .Transform-your-brand article .title {
+  main .Transform-your-brand article h2 {
     text-transform: capitalize; }
   main .Transform-your-brand article button {
     background: linear-gradient(0deg, #fad400 0%, white 40%); }
   main .Transform-your-brand figure {
     height: 600px; }
-    @media (max-width: 480px) {
+    @media (max-width: 640px) {
       main .Transform-your-brand figure {
         width: 100%;
         height: 300px; } }
@@ -201,16 +210,16 @@ main {
       object-position: center; }
   main .Stand-out-to-the-right-audience {
     flex-direction: row-reverse; }
-    @media (max-width: 480px) {
+    @media (max-width: 640px) {
       main .Stand-out-to-the-right-audience {
         flex-direction: column-reverse; } }
-    main .Stand-out-to-the-right-audience article .title {
+    main .Stand-out-to-the-right-audience article h2 {
       text-transform: capitalize; }
     main .Stand-out-to-the-right-audience article button {
       background: linear-gradient(0deg, #fe7867 0%, white 40%); }
     main .Stand-out-to-the-right-audience figure {
       height: 600px; }
-      @media (max-width: 480px) {
+      @media (max-width: 640px) {
         main .Stand-out-to-the-right-audience figure {
           width: 100%;
           height: 400px; } }
@@ -234,10 +243,10 @@ main {
         object-fit: cover; }
     main .graphic-photography article article {
       position: relative;
-      bottom: 200px;
+      bottom: 40%;
       margin: 0 auto;
       text-align: center; }
-      main .graphic-photography article article .title {
+      main .graphic-photography article article h2 {
         letter-spacing: 0.01rem;
         line-height: 1.91rem;
         font-size: 1.4rem;
@@ -248,8 +257,8 @@ main {
         line-height: 1.5rem; }
   main .testimonials {
     flex-direction: column;
-    height: 550px; }
-    main .testimonials .title {
+    min-height: 550px; }
+    main .testimonials h2 {
       color: #a7abae;
       font-size: 1.1rem;
       text-transform: uppercase;
@@ -258,8 +267,9 @@ main {
       font-weight: normal;
       padding: 10px 0; }
     main .testimonials .cards {
+      width: 80%;
       display: grid;
-      grid-template-columns: repeat(3, 300px);
+      grid-template-columns: repeat(3, 1fr);
       gap: 50px;
       width: 72%;
       margin: 0 auto; }
@@ -329,25 +339,26 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 50px 0px; }
-    footer article ul {
+    footer article .logo, footer article .link, footer article .follow {
+      padding: 20px 0; }
+    footer article .link ul, footer article .follow ul {
       width: 100%;
       height: 25px;
-      list-style-type: none;
-      margin: 25px 0px; }
-      footer article ul li {
+      list-style-type: none; }
+      footer article .link ul li, footer article .follow ul li {
         float: left;
         margin-left: 30px;
         display: block;
         font-size: 1rem;
         line-height: 1.38rem;
         letter-spacing: 0.007rem; }
+    footer article .logo img {
+      filter: invert(100%) sepia(100%) saturate(0%); }
     footer article .link a {
       color: #458c7e;
       font-size: 1rem;
       line-height: 1.38rem;
       letter-spacing: 0.007rem; }
-    footer article .logo img {
-      filter: invert(100%) sepia(100%) saturate(0%); }
     footer article .logo img {
       filter: hue-rotate(167deg) saturate(40%) brightness(24%); }
 

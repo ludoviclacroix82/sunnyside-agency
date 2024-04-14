@@ -36,15 +36,14 @@ header{
     flex-direction: column;
 
     nav{
-        width: 100%;
+        width: 95%;
         height: 56px;
-        padding: 20px 0;
         display: flex;
         flex-direction: row;
         position: relative;
         top: 34px;
-        left: 40px;
         z-index: 2;
+        margin: 0 auto;
 
         %navDefault{
             
@@ -66,19 +65,21 @@ header{
             @include Mobile{
                 display: none !important;
             }
+            @include Small{
+                display: none !important;
+            }
 
             font-size: 1rem;
             text-transform: capitalize;
             color:$neutralWhite ;
             text-align: right;
-            padding-right: 30px;
             display: flex;
             justify-content: right;
             ul{
                 list-style-type: none;
                 line-height: 40px;
                 li{
-                    margin-right: 40px;
+                    margin-left: 40px;
                     float: left;
                     line-height: 1.38rem;
                     letter-spacing: 0.007rem; 
@@ -103,18 +104,26 @@ header{
         }   
         .nav-mobile{
             width: 50px;
-            padding: 30px 10px;
             display: none;
 
             @include Mobile{
-                display:block !important;
+                display: flex !important;
+                justify-content: right;
+                align-items: center;
+                width: 45%;
+            }
+            @include Small{
+                display: flex !important;
+                justify-content: right;
+                align-items: center;
+                width: 45%;
             }
         }     
     }
     figure{
         width: 100%;
         height: $headerHeigth;
-        position: relative;
+        position: absolute;
         z-index: 1;
         img{
             width: 100%;
@@ -223,7 +232,7 @@ main{
             @extend %item;
         
 
-            .title{
+            h2{
                 @extend %title;
                 text-transform:capitalize;
             }
@@ -264,7 +273,7 @@ main{
         article{
             @extend %item;
 
-            .title{
+            h2{
                 @extend %title;
                 text-transform:capitalize;
             }
@@ -319,11 +328,11 @@ main{
             }
             article{
                 position: relative;
-                bottom: 200px;
+                bottom: 40%;
                 margin: 0 auto;
                 text-align: center;
 
-                .title{
+                h2{
                     @extend .Fraunces-black;
                     letter-spacing: 0.01rem;
                     line-height: 1.91rem;
@@ -344,9 +353,9 @@ main{
     .testimonials{
         @extend %section;
         flex-direction: column;
-        height: 550px;
+        min-height: 550px;
 
-        .title{
+        h2{
             @extend .Fraunces-black;
             color: $neutralGrayishBlue;
             font-size: 1.1rem;
@@ -358,8 +367,9 @@ main{
         }
 
         .cards{
+            width: 80%;
             display: grid ;
-            grid-template-columns: repeat(3,300px);
+            grid-template-columns: repeat(3,1fr);
             gap:50px;
             width: 72%;
             margin: 0 auto;
@@ -454,25 +464,39 @@ footer{
         align-items: center;
         padding: 50px 0px;
 
-        
-            ul{
-                width: 100%;
-                height: 25px;
-                list-style-type: none;
-                margin: 25px 0px;
-                
-                
-                li{
-                    @extend .barlow-semibold;
-                    float: left;
-                    margin-left: 30px;
-                    display: block;
-                    font-size: 1rem;
-                    line-height: 1.38rem;
-                    letter-spacing: 0.007rem;
+        %sectionFooter{
+            padding: 20px 0;
+        }
+
+        %ul{
+            width: 100%;
+            height: 25px;
+            list-style-type: none;            
+            
+            li{
+                @extend .barlow-semibold;
+                float: left;
+                margin-left: 30px;
+                display: block;
+                font-size: 1rem;
+                line-height: 1.38rem;
+                letter-spacing: 0.007rem;
+            }
+        }
+            .logo{
+                @extend %sectionFooter;
+
+                img{
+                    filter: invert(100%) sepia(100%) saturate(0%);
                 }
             }
             .link{
+                @extend %sectionFooter;
+
+                ul{
+                    @extend %ul;
+                }
+
                 a{
                     color: $primaryDarkModerateCyan; 
                     font-size: 1rem;
@@ -480,11 +504,13 @@ footer{
                     letter-spacing: 0.007rem;
                 }
             }
-            .logo{
-                img{
-                    filter: invert(100%) sepia(100%) saturate(0%);
+           .follow{
+                @extend %sectionFooter;
+
+                ul{
+                    @extend %ul;
                 }
-            }
+           }
             
 
             
