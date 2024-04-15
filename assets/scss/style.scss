@@ -52,35 +52,37 @@ header{
         @include Mobile{
 
             display: grid;
-            grid-template: 'navLogo navLogo navMobile' 'navLink navLink navLink';
-            gap:10px;            
+            grid-template: 'navLogo navLogo navMobile' 'navLink navLink navLink';         
         }
 
         %navDefault{            
             width: 50%;
             display: flex;
             align-items: center;
+            height: 56px;
         }
 
         .nav-logo{
             @extend %navDefault; 
             @include Mobile{
                 grid-area: navLogo;
+                padding-left: 10px;
             }
 
-           picture{
-                padding: 0 30px;
-           }
-        }
+         }
         .nav-link{
             @extend %navDefault;
             @extend .barlow-semibold;
+            text-transform: capitalize;
+            color:$neutralWhite ;
+            text-align: right;
+            display: flex;
+            justify-content: right;
 
-
-            @include Mobile{                
+            @include Mobile{      
+                display: none;          
                 position: relative;
                 top: 25px;
-                display: grid !important;
                 grid-area: navLink;
                 margin: 0 auto;
                 width: 329px;
@@ -98,14 +100,10 @@ header{
                     position: relative;
                     bottom: 25px;
                     left: 305px;
-                }
+                }                
             }
-
-            text-transform: capitalize;
-            color:$neutralWhite ;
-            text-align: right;
-            display: flex;
-            justify-content: right;
+            
+            
             ul{
                 list-style-type: none;
                 line-height: 40px;
@@ -123,6 +121,7 @@ header{
                     font-size: 1rem;
                     line-height: 1.38rem;
                     letter-spacing: 0.007rem; 
+                    cursor: pointer;
 
                     @include Mobile{
                         float: none;
@@ -130,8 +129,15 @@ header{
                         color: $neutralDarkGrayishBlue;
                         display: flex;
                         justify-content: center;
-                         margin-left: 0;
+                         margin-left: 0; 
+                         
+                        a{
+                        color: $neutralDarkGrayishBlue !important;
+                        }
                     }
+                    a{
+                        color: $neutralWhite;
+                        }
                 }
                 .contact{
                     a{
@@ -167,12 +173,17 @@ header{
                 display: flex !important;
                 justify-content: right;
                 align-items: center;
-                width: 45%;
+                width: 85%;                
             }
-        }     
+        }   
+        .open{
+            @include Mobile{ 
+                    display: grid !important;
+                }
+        }  
     }
     figure{
-        width: 100%;
+        width: auto;
         height: $headerHeigth;
         position: absolute;
         z-index: 1;
@@ -180,7 +191,6 @@ header{
         @include Mobile{
             height: 538px;
         }
-
         img{
             width: 100%;
             height: 100%;
@@ -195,7 +205,7 @@ header{
         position: absolute;
         width: 750px;
         height: 69px;
-        top:45%;
+        top:35%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
@@ -219,7 +229,7 @@ header{
             width: 30px;
             height: 107px;
             align-items: center;
-            margin-top: 120px;
+            margin-top: 150px;
 
             @include Mobile{
                 margin-top: 120px;  

@@ -60,17 +60,16 @@ header {
     @media (max-width: 640px) {
       header nav {
         display: grid;
-        grid-template: 'navLogo navLogo navMobile' 'navLink navLink navLink';
-        gap: 10px; } }
+        grid-template: 'navLogo navLogo navMobile' 'navLink navLink navLink'; } }
     header nav .nav-logo, header nav .nav-link {
       width: 50%;
       display: flex;
-      align-items: center; }
+      align-items: center;
+      height: 56px; }
     @media (max-width: 640px) {
       header nav .nav-logo {
-        grid-area: navLogo; } }
-    header nav .nav-logo picture {
-      padding: 0 30px; }
+        grid-area: navLogo;
+        padding-left: 10px; } }
     header nav .nav-link {
       text-transform: capitalize;
       color: white;
@@ -79,9 +78,9 @@ header {
       justify-content: right; }
       @media (max-width: 640px) {
         header nav .nav-link {
+          display: none;
           position: relative;
           top: 25px;
-          display: grid !important;
           grid-area: navLink;
           margin: 0 auto;
           width: 329px;
@@ -112,7 +111,8 @@ header {
           float: left;
           font-size: 1rem;
           line-height: 1.38rem;
-          letter-spacing: 0.007rem; }
+          letter-spacing: 0.007rem;
+          cursor: pointer; }
           @media (max-width: 640px) {
             header nav .nav-link ul li {
               float: none;
@@ -120,7 +120,11 @@ header {
               color: #818498;
               display: flex;
               justify-content: center;
-              margin-left: 0; } }
+              margin-left: 0; }
+              header nav .nav-link ul li a {
+                color: #818498 !important; } }
+          header nav .nav-link ul li a {
+            color: white; }
         header nav .nav-link ul .contact a {
           background-color: white;
           color: #23303e;
@@ -148,9 +152,12 @@ header {
           display: flex !important;
           justify-content: right;
           align-items: center;
-          width: 45%; } }
+          width: 85%; } }
+    @media (max-width: 640px) {
+      header nav .open {
+        display: grid !important; } }
   header figure {
-    width: 100%;
+    width: auto;
     height: 800px;
     position: absolute;
     z-index: 1; }
@@ -168,7 +175,7 @@ header {
     position: absolute;
     width: 750px;
     height: 69px;
-    top: 45%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -190,7 +197,7 @@ header {
       width: 30px;
       height: 107px;
       align-items: center;
-      margin-top: 120px; }
+      margin-top: 150px; }
       @media (max-width: 640px) {
         header .wrap figure {
           margin-top: 120px; } }
