@@ -28,12 +28,16 @@ body{
   }
 
 header{
-    $headerHeigth:800px !default;
+    $headerHeigth:800px !default;    
 
     background-color: hsl(199.79deg, 100% ,61.96%);
     height: $headerHeigth;
     display: flex;
     flex-direction: column;
+
+    @include Mobile{
+        height: 538px;
+    }   
 
     nav{
         width: 95%;
@@ -41,19 +45,29 @@ header{
         display: flex;
         flex-direction: row;
         position: relative;
-        top: 34px;
-        z-index: 2;
+        top: 30px;
+        z-index: 99;
         margin: 0 auto;
 
-        %navDefault{
-            
+        @include Mobile{
+
+            display: grid;
+            grid-template: 'navLogo navLogo navMobile' 'navLink navLink navLink';
+            gap:10px;            
+        }
+
+        %navDefault{            
             width: 50%;
             display: flex;
             align-items: center;
         }
 
         .nav-logo{
-           @extend %navDefault; 
+            @extend %navDefault; 
+            @include Mobile{
+                grid-area: navLogo;
+            }
+
            picture{
                 padding: 0 30px;
            }
@@ -62,14 +76,31 @@ header{
             @extend %navDefault;
             @extend .barlow-semibold;
 
-            @include Mobile{
-                display: none !important;
-            }
-            @include Small{
-                display: none !important;
+
+            @include Mobile{                
+                position: relative;
+                top: 25px;
+                display: grid !important;
+                grid-area: navLink;
+                margin: 0 auto;
+                width: 329px;
+                height: 329px;
+                background-color: $neutralWhite;
+                text-align: center;
+
+                &:before{
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 0 24px 24px;
+                    border-color: transparent transparent $neutralWhite transparent;
+                    position: relative;
+                    bottom: 25px;
+                    left: 305px;
+                }
             }
 
-            font-size: 1rem;
             text-transform: capitalize;
             color:$neutralWhite ;
             text-align: right;
@@ -78,13 +109,32 @@ header{
             ul{
                 list-style-type: none;
                 line-height: 40px;
+
+                @include Mobile{
+                    float: none;
+                    width: 329px;
+                    height: 280px;
+                    display: grid;
+                }
+
                 li{
                     margin-left: 40px;
                     float: left;
+                    font-size: 1rem;
                     line-height: 1.38rem;
                     letter-spacing: 0.007rem; 
+
+                    @include Mobile{
+                        float: none;
+                        line-height: 40px;
+                        color: $neutralDarkGrayishBlue;
+                        display: flex;
+                        justify-content: center;
+                         margin-left: 0;
+                    }
                 }
                 .contact{
+                    a{
                     @extend .Fraunces-bold;
                     background-color: $neutralWhite ;
                     color:$neutralVeryDarkDesaturatedBlue ;
@@ -99,6 +149,12 @@ header{
                     letter-spacing: 0.006rem; 
                     position: relative;
                     bottom: 10px;
+
+                    @include Mobile{
+                        background-color: $primaryYellow ;
+                        bottom: 0;
+                    }
+                    }                                        
                 }
             }
         }   
@@ -107,12 +163,7 @@ header{
             display: none;
 
             @include Mobile{
-                display: flex !important;
-                justify-content: right;
-                align-items: center;
-                width: 45%;
-            }
-            @include Small{
+                grid-area: navMobile;
                 display: flex !important;
                 justify-content: right;
                 align-items: center;
@@ -125,10 +176,16 @@ header{
         height: $headerHeigth;
         position: absolute;
         z-index: 1;
+
+        @include Mobile{
+            height: 538px;
+        }
+
         img{
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
         }
     }
     .wrap{
@@ -137,8 +194,8 @@ header{
         z-index: 3;
         position: absolute;
         width: 750px;
-        height: 69;
-        top:65%;
+        height: 69px;
+        top:45%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
@@ -152,15 +209,21 @@ header{
 
         @include Mobile{
             width: 50%;
-            font-size: 2rem;
-            top:35%;
+            font-size: 2.2rem;
+            top:25%;
+            letter-spacing: 0.34rem;
+            line-height: 2.74rem;
         }
 
         figure {
             width: 30px;
             height: 107px;
             align-items: center;
-            margin-top: 70px;
+            margin-top: 120px;
+
+            @include Mobile{
+                margin-top: 120px;  
+            }
         }
     }
 }
@@ -187,10 +250,10 @@ main{
         align-items: center;
         justify-content: center;
         width: 50%;
-        @include Mobile{
-            width: 100%;
-            height: 400px;
-        }
+            @include Mobile{
+                width: 100%;
+                height: 400px;
+            }
         }
     
     %title{
@@ -200,6 +263,16 @@ main{
         font-size: 2.2rem;
         line-height:2.74rem; 
         letter-spacing: 0.016rem;
+
+        @include Mobile{
+            width: 327px;
+            height: 78px;
+            margin: 0 auto;
+            font-size: 1.77rem;
+            line-height:2.13rem; 
+            letter-spacing: 0.028rem;
+            text-align: center;
+        }
     }
     %p{
         @extend .barlow-semibold ;
@@ -211,6 +284,15 @@ main{
         line-height: 1.66rem;
         letter-spacing: 0.007rem;
 
+        @include Mobile{
+            width: 327px;
+            height: 150px;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height:1.66rem; 
+            letter-spacing: 0.07rem;
+            text-align: center;
+        }
     }
     %button{
         @extend .Fraunces-black;
@@ -223,6 +305,16 @@ main{
         display: block;
         line-height: 1.38rem;
         letter-spacing: 0.055rem;
+
+        @include Mobile{
+            width: 137px;
+            height: 25px;
+            margin: 0 auto;
+            font-size: 0.83rem;
+            line-height:1.38rem; 
+            letter-spacing: 0.055rem;
+            margin-top: 30px;
+        }
     }
 
     .Transform-your-brand{
@@ -251,7 +343,7 @@ main{
             
             @include Mobile{
                 width: 100%;
-                height:300px;
+                height:312px;
             }
             
             img{
@@ -265,6 +357,7 @@ main{
     .Stand-out-to-the-right-audience{
         @extend %section;
         flex-direction: row-reverse;
+
         @include Mobile{
             flex-direction: column-reverse;
             
@@ -304,6 +397,10 @@ main{
     .graphic-photography{
         @extend %section;
 
+        @include Mobile{
+            flex-direction: column;            
+        }
+
         .graphic{
             color:$primaryDarkDesaturatedCyan;
         }
@@ -314,6 +411,10 @@ main{
             @extend %item;
             display: block;
             height: $sectionHeight;
+
+            @include Mobile{
+                height: 600px;           
+            }          
             
             figure{
                 @extend %item;
@@ -332,18 +433,45 @@ main{
                 margin: 0 auto;
                 text-align: center;
 
+                @include Mobile{
+                    margin: 0 auto;
+                    width: 327px;
+                    height: 143px;           
+                }
+
                 h2{
                     @extend .Fraunces-black;
                     letter-spacing: 0.01rem;
                     line-height: 1.91rem;
                     font-size: 1.4rem;
                     padding: 20px 0;
+
+                    @include Mobile{
+                        margin: 0 auto;
+                        width: 221px;
+                        height: 35px;    
+                        text-align: center;
+                        letter-spacing: 0.01rem;
+                        line-height: 1.91rem;
+                        font-size: 1.55rem;       
+                    }
                 }
                 p{
                     @extend .barlow-semibold;
                     font-size: 0.88rem;
                     letter-spacing: 0.006rem;
                     line-height: 1.5rem;
+
+                    @include Mobile{
+                        margin: 0 auto;
+                        width: 327px;
+                        height: 81px;    
+                        text-align: center;
+                        letter-spacing: 0.006rem;
+                        line-height: 1.5rem;
+                        font-size: 0.88rem;       
+                    }
+                    
                 }
             }
         }
@@ -355,6 +483,10 @@ main{
         flex-direction: column;
         min-height: 550px;
 
+        @include Mobile{
+            padding: 50px 0;
+        }
+
         h2{
             @extend .Fraunces-black;
             color: $neutralGrayishBlue;
@@ -364,6 +496,16 @@ main{
             line-height: 1.37rem;
             font-weight: normal;
             padding: 10px 0;
+            
+            @include Mobile{
+                width: 279px;
+                height: 20px;
+                margin: 0 auto;
+                font-size: 0.88rem;               
+                line-height: 1.09rem;
+                letter-spacing: 0.22rem;
+                text-align: center;
+            }
         }
 
         .cards{
@@ -373,12 +515,21 @@ main{
             gap:50px;
             width: 72%;
             margin: 0 auto;
-            
+
+            @include Mobile{
+                grid-template-columns: repeat(1,1fr);
+                width: 327px;
+                margin: 0 auto;
+            }
 
             .card{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+
+                @include Mobile{
+                    width: 327px;
+                }
 
                 .card-user{
                     text-align: center;
@@ -399,11 +550,18 @@ main{
                     @extend .barlow-semibold;
                     font-size: 1rem;
                     color:$neutralVeryDarkGrayishBlue;
-                    line-height: 1.3rem;
                     text-transform: capitalize;
                     padding: 0 0 30px 0;
                     line-height: 1.77rem;
-                    letter-spacing:0.007rem; 
+                    letter-spacing:0.007rem;
+                    
+                    @include Mobile{
+                        width: 327px;
+                        font-size: 1rem;
+                        line-height: 1.77rem;
+                        letter-spacing:0.007rem;
+                        text-align: center;
+                    }
                 }
                 .card-name{
                     @extend .Fraunces-black;
@@ -412,6 +570,15 @@ main{
                     text-transform: capitalize;
                     line-height: 1.23rem;
                     letter-spacing: 0.007rem;
+
+                    @include Mobile{
+                        margin: 0 auto;
+                        width: 79px;
+                        font-size: 1rem;
+                        line-height: 1.23rem;
+                        letter-spacing:0.007rem;
+                        text-align: center;
+                    }
                 }
                 .card-job{
                     @extend .barlow-semibold;
@@ -420,6 +587,15 @@ main{
                     text-transform: capitalize;
                     line-height: 1.38rem;
                     letter-spacing: 0.005rem;
+
+                    @include Mobile{
+                        margin: 0 auto;
+                        width: 203px;
+                        font-size: 0.77rem;
+                        line-height: 1.38rem;
+                        letter-spacing:0.005rem;
+                        text-align: center;
+                    }
                 }
             }
         }
@@ -429,13 +605,25 @@ main{
         $galleryHeight: 447px;
         height: $galleryHeight;
 
+        @include Mobile{
+            height: 375px;
+        }
+
         article{
             display: grid;
             grid-template-columns: repeat(4,1fr);
             width: 100%;
             height: $galleryHeight;
+            @include Mobile{
+                height: 375px;
+                grid-template-columns: repeat(2,1fr);
+            }
+
             figure{
                 height: $galleryHeight;
+                @include Mobile{
+                    height: 188px;
+                }
                 img{
                     width: 100%;
                     height: 100%;
@@ -464,6 +652,10 @@ footer{
         align-items: center;
         padding: 50px 0px;
 
+        @include Mobile{
+            height: 206px;
+        }
+
         %sectionFooter{
             padding: 20px 0;
         }
@@ -471,7 +663,15 @@ footer{
         %ul{
             width: 100%;
             height: 25px;
-            list-style-type: none;            
+            list-style-type: none; 
+            text-align: center;  
+            display: flex;
+            justify-content: center;
+
+            @include Mobile{
+                width: 297px;
+                height: 25px;
+            }         
             
             li{
                 @extend .barlow-semibold;
@@ -481,6 +681,10 @@ footer{
                 font-size: 1rem;
                 line-height: 1.38rem;
                 letter-spacing: 0.007rem;
+                @include Mobile{
+                    width: 69px;
+                    height: 25px;
+                } 
             }
         }
             .logo{
@@ -509,7 +713,17 @@ footer{
 
                 ul{
                     @extend %ul;
+                    margin: 0 auto;
+
+                    li{
+                        @include Mobile{
+                            width: 30px;
+                            height: 25px;
+                            margin-left: 10px;
+                        } 
+                    }
                 }
+
            }
             
 
