@@ -90,6 +90,7 @@ header {
           width: 329px;
           height: 329px;
           background-color: white;
+          color: #818498;
           text-align: center; }
           header nav .nav-link:before {
             content: '';
