@@ -263,7 +263,6 @@ main{
 
         @include Mobile{
             flex-direction: column-reverse;
-            height: none;
         }
     }
     %item{
@@ -301,7 +300,6 @@ main{
         color: $neutralDarkGrayishBlue;
         width: 50%;
         font-size: 1rem;
-        font-weight: normal;
         padding: 20px 0;
         line-height: 1.66rem;
         letter-spacing: 0.007rem;
