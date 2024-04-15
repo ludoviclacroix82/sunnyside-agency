@@ -56,7 +56,6 @@ header{
         }
 
         %navDefault{            
-            width: 50%;
             display: flex;
             align-items: center;
             height: 56px;
@@ -64,6 +63,7 @@ header{
 
         .nav-logo{
             @extend %navDefault; 
+            width: 30%;
             @include Mobile{
                 grid-area: navLogo;
                 padding-left: 10px;
@@ -73,6 +73,7 @@ header{
         .nav-link{
             @extend %navDefault;
             @extend .barlow-semibold;
+            width: 65%;
             text-transform: capitalize;
             color:$neutralWhite ;
             text-align: right;
@@ -80,7 +81,8 @@ header{
             justify-content: right;
 
             @include Mobile{      
-                display: none;          
+                opacity: 0;  
+                transition: opacity 0.8s;      
                 position: relative;
                 top: 25px;
                 grid-area: navLink;
@@ -98,11 +100,10 @@ header{
                     border-width: 0 0 24px 24px;
                     border-color: transparent transparent $neutralWhite transparent;
                     position: relative;
-                    bottom: 25px;
+                    bottom: 30px;
                     left: 305px;
                 }                
-            }
-            
+            }           
             
             ul{
                 list-style-type: none;
@@ -156,9 +157,15 @@ header{
                     position: relative;
                     bottom: 10px;
 
+                    &:hover{
+                        color: $neutralWhite;
+                        background-color: $contactHoverWhite;
+                    }
+
                     @include Mobile{
                         background-color: $primaryYellow ;
                         bottom: 0;
+                        color:$neutralVeryDarkDesaturatedBlue;
                     }
                     }                                        
                 }
@@ -179,6 +186,8 @@ header{
         .open{
             @include Mobile{ 
                     display: grid !important;
+                    opacity: 1;; 
+                    transition: opacity 0.8s;
                 }
         }  
     }
@@ -315,6 +324,7 @@ main{
         display: block;
         line-height: 1.38rem;
         letter-spacing: 0.055rem;
+        cursor: pointer;
 
         @include Mobile{
             width: 137px;
@@ -344,7 +354,6 @@ main{
             button{
                 @extend %button;
                 background: linear-gradient(0deg, #{$primaryYellow} 0%, #{$neutralWhite} 40%);
-
             }
         }
         figure{
@@ -677,7 +686,6 @@ footer{
             text-align: center;  
             display: flex;
             justify-content: center;
-
             @include Mobile{
                 width: 297px;
                 height: 25px;
@@ -691,6 +699,11 @@ footer{
                 font-size: 1rem;
                 line-height: 1.38rem;
                 letter-spacing: 0.007rem;
+
+                &:hover img{
+                    filter: brightness(100);
+                }
+
                 @include Mobile{
                     width: 69px;
                     height: 25px;
@@ -701,7 +714,7 @@ footer{
                 @extend %sectionFooter;
 
                 img{
-                    filter: invert(100%) sepia(100%) saturate(0%);
+                    filter: invert(167) sepia(40) brightness(0%);
                 }
             }
             .link{
@@ -710,12 +723,14 @@ footer{
                 ul{
                     @extend %ul;
                 }
-
                 a{
                     color: $primaryDarkModerateCyan; 
                     font-size: 1rem;
                     line-height: 1.38rem;
                     letter-spacing: 0.007rem;
+                    &:hover{
+                        color: $neutralWhite;
+                    }
                 }
             }
            .follow{
@@ -730,18 +745,13 @@ footer{
                             width: 30px;
                             height: 25px;
                             margin-left: 10px;
+                            cursor: pointer;
+
+                        
                         } 
                     }
                 }
 
-           }
-            
-
-            
-           .logo{
-                img{
-                    filter:hue-rotate(167deg) saturate(40%) brightness(24%);
-                }
            }
     }
 }
