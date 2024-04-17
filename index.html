@@ -6,7 +6,7 @@
     <title>Sunnyside agency landing page</title>
     <link rel="shortcut icon" href="assets/images/icons/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/menu.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,7 +22,7 @@
                 <a href="#">Projects</a>
                 <a href="#" class="contact">Contact</a>  
             </div>
-            <div class="nav-mobile"  onclick="toggleMobileMenu('navLink','open')">
+            <div class="nav-mobile">
                 <img src="assets/images/icons/icon-hamburger.svg" alt="">
             </div>
         </nav>
@@ -87,58 +87,44 @@
             <div class="cards">
                 <article class="card">
                     <div class="card-user">
-                        <figure>
-                            <img src="assets/images/people/image-emily.jpg" alt="Emily R.">
-                        </figure>
+                        <img src="assets/images/people/image-emily.jpg" alt="Emily R.">
                     </div>
                     <div class="card-content">
                         We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.
                     </div>
-                    <div class="card-name">Emily R.</div>
-                    <div class="card-job"> Marketing Director</div>
+                    <p class="card-name">Emily R.</p>
+                    <p class="card-job"> Marketing Director</p>
                 </article>
                 <article class="card">
                     <div class="card-user">
-                        <figure>
-                            <img src="assets/images/people/image-thomas.jpg" alt="Thomas S">
-                        </figure>
+                        <img src="assets/images/people/image-thomas.jpg" alt="Thomas S">
                     </div>
                     <div class="card-content">
                         Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.
                     </div>
-                    <div class="card-name">Thomas S.</div>
-                    <div class="card-job">Chief Operating Officer</div>
+                    <p class="card-name">Thomas S.</p>
+                    <p class="card-job">Chief Operating Officer</p>
                 </article>
                 <article class="card">
                     <div class="card-user">
-                        <figure>
-                            <img src="assets/images/people/image-jennie.jpg" alt="Jennie F.">
-                        </figure>
+                        <img src="assets/images/people/image-jennie.jpg" alt="Jennie F.">
                     </div>
                     <div class="card-content">
                         Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!
                     </div>
-                    <div class="card-name"> Jennie F.</div>
-                    <div class="card-job">Business Owner</div>
+                    <p class="card-name"> Jennie F.</p>
+                    <p class="card-job">Business Owner</p>
                 </article>
             </div>
         </section>
-        <section class="gallery">
+        <div class="gallery">
             <article>
-                <figure>
-                    <img src="assets/images/photos/image-gallery-milkbottles.jpg" alt="milkbottles">
-                </figure>
-                <figure>
-                    <img src="assets/images/photos/image-gallery-orange.jpg" alt="Orange">
-                </figure>
-                <figure>
-                    <img src="assets/images/photos/image-gallery-cone.jpg" alt="Cone">
-                </figure>
-                <figure>
-                    <img src="assets/images/photos/image-gallery-sugarcubes.jpg" alt="sugarcubes">
-                </figure>
+                <img src="assets/images/photos/image-gallery-milkbottles.jpg" alt="milkbottles">
+                <img src="assets/images/photos/image-gallery-orange.jpg" alt="Orange">
+                <img src="assets/images/photos/image-gallery-cone.jpg" alt="Cone">
+                <img src="assets/images/photos/image-gallery-sugarcubes.jpg" alt="sugarcubes">
             </article>
-        </section>
+        </div>
     </main>
     <footer>
         <article>
@@ -148,17 +134,11 @@
               </figure>  
             </div>
             <div class="link"> 
-                <ul>
-                    <li>
-                        <a href="">About</a>
-                    </li>
-                    <li>
-                        <a href="">Services</a>
-                    </li>
-                    <li>
-                        <a href="">Projects</a>
-                    </li>
-                </ul>
+                <nav>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Projects</a>
+                </nav>
             </div>
             <div class="follow">
                 <ul>

@@ -27,7 +27,7 @@ body {
   background-color: #c0c0c0;
   margin: 0 auto; }
 
-.barlow-semibold, header nav .nav-link, header nav .nav-link a, main .Transform-your-brand article p, main .Stand-out-to-the-right-audience article p, main .graphic-photography article article p, main .testimonials .cards .card .card-content, main .testimonials .cards .card .card-job, footer article .link ul li, footer article .follow ul li {
+.barlow-semibold, header nav .nav-link, header nav .nav-link a, main .Transform-your-brand article p, main .Stand-out-to-the-right-audience article p, main .graphic-photography article article p, main .testimonials .cards .card .card-content, main .testimonials .cards .card .card-job, footer article .follow ul li {
   font-family: "Barlow", sans-serif;
   font-weight: 600;
   font-style: normal; }
@@ -86,18 +86,18 @@ header {
       justify-content: right; }
       @media (max-width: 640px) {
         header nav .nav-link {
+          grid-area: navLink;
           opacity: 0;
           transition: opacity 0.8s;
           position: relative;
           top: 25px;
-          grid-area: navLink;
           margin: 0 auto;
           width: 329px;
           height: 329px;
           background-color: white;
           color: #818498;
           text-align: center;
-          display: flex;
+          display: inline-grid;
           justify-content: center;
           flex-direction: column; }
           header nav .nav-link:before {
@@ -109,13 +109,18 @@ header {
             border-color: transparent transparent white transparent;
             position: relative;
             bottom: 30px;
-            left: 305px; } }
+            left: 184px; } }
       header nav .nav-link a {
         font-size: 1rem;
         line-height: 1.38rem;
         letter-spacing: 0.007rem;
         margin-left: 50px;
         color: white; }
+        @media (max-width: 640px) {
+          header nav .nav-link a {
+            color: #818498;
+            margin-left: 0px;
+            margin-bottom: 20px; } }
       header nav .nav-link .contact {
         background-color: white;
         padding: 10px 20px;
@@ -128,6 +133,11 @@ header {
         header nav .nav-link .contact:hover {
           background-color: rgba(255, 255, 255, 0.5);
           color: white; }
+        @media (max-width: 640px) {
+          header nav .nav-link .contact {
+            background-color: #fad400; }
+            header nav .nav-link .contact:hover {
+              color: #23303e; } }
     header nav .nav-mobile {
       width: 50px;
       display: none; }
@@ -140,7 +150,6 @@ header {
           width: 85%; } }
     @media (max-width: 640px) {
       header nav .open {
-        display: grid !important;
         opacity: 1;
         transition: opacity 0.8s; } }
   header figure {
@@ -175,9 +184,10 @@ header {
     align-items: center; }
     @media (max-width: 640px) {
       header .wrap {
+        position: relative;
         width: 50%;
         font-size: 2.2rem;
-        top: 25%;
+        top: 20%;
         letter-spacing: 0.34rem;
         line-height: 2.74rem; } }
     header .wrap img {
@@ -187,7 +197,7 @@ header {
       margin-top: 100px; }
       @media (max-width: 640px) {
         header .wrap img {
-          margin-top: 120px; } }
+          margin-top: 30px; } }
 
 main {
   background-color: white; }
@@ -391,23 +401,21 @@ main {
       main .testimonials .cards .card {
         display: flex;
         flex-direction: column;
-        align-items: center; }
+        align-items: center;
+        justify-content: space-between; }
         @media (max-width: 640px) {
           main .testimonials .cards .card {
             width: 327px; } }
         main .testimonials .cards .card .card-user {
-          text-align: center;
           padding: 50px 0; }
-          main .testimonials .cards .card .card-user figure {
+          main .testimonials .cards .card .card-user img {
             width: 72px;
-            height: 72px; }
-            main .testimonials .cards .card .card-user figure img {
-              width: 100%;
-              height: 100%;
-              border: 0;
-              object-fit: cover;
-              border-radius: 50%; }
+            height: 72px;
+            border: 0;
+            object-fit: cover;
+            border-radius: 50%; }
         main .testimonials .cards .card .card-content {
+          text-align: center;
           font-size: 1rem;
           color: #5a636c;
           text-transform: capitalize;
@@ -426,11 +434,11 @@ main {
           color: #23303e;
           text-transform: capitalize;
           line-height: 1.23rem;
-          letter-spacing: 0.007rem; }
+          letter-spacing: 0.007rem;
+          text-align: center; }
           @media (max-width: 640px) {
             main .testimonials .cards .card .card-name {
               margin: 0 auto;
-              width: 79px;
               font-size: 1rem;
               line-height: 1.23rem;
               letter-spacing: 0.007rem;
@@ -440,7 +448,8 @@ main {
           color: #a7abae;
           text-transform: capitalize;
           line-height: 1.38rem;
-          letter-spacing: 0.005rem; }
+          letter-spacing: 0.005rem;
+          text-align: center; }
           @media (max-width: 640px) {
             main .testimonials .cards .card .card-job {
               margin: 0 auto;
@@ -453,7 +462,7 @@ main {
     height: 447px; }
     @media (max-width: 640px) {
       main .gallery {
-        height: 375px; } }
+        height: auto; } }
     main .gallery article {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -461,17 +470,12 @@ main {
       height: 447px; }
       @media (max-width: 640px) {
         main .gallery article {
-          height: 375px;
+          height: auto;
           grid-template-columns: repeat(2, 1fr); } }
-      main .gallery article figure {
-        height: 447px; }
-        @media (max-width: 640px) {
-          main .gallery article figure {
-            height: 188px; } }
-        main .gallery article figure img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover; }
+      main .gallery article img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
 
 footer {
   width: auto;
@@ -494,7 +498,7 @@ footer {
         height: 206px; } }
     footer article .logo, footer article .link, footer article .follow {
       padding: 20px 0; }
-    footer article .link ul, footer article .follow ul {
+    footer article .follow ul {
       width: 100%;
       height: 25px;
       list-style-type: none;
@@ -502,20 +506,20 @@ footer {
       display: flex;
       justify-content: center; }
       @media (max-width: 640px) {
-        footer article .link ul, footer article .follow ul {
+        footer article .follow ul {
           width: 297px;
           height: 25px; } }
-      footer article .link ul li, footer article .follow ul li {
+      footer article .follow ul li {
         float: left;
         margin-left: 30px;
         display: block;
         font-size: 1rem;
         line-height: 1.38rem;
         letter-spacing: 0.007rem; }
-        footer article .link ul li:hover img, footer article .follow ul li:hover img {
+        footer article .follow ul li:hover img {
           filter: brightness(100); }
         @media (max-width: 640px) {
-          footer article .link ul li, footer article .follow ul li {
+          footer article .follow ul li {
             width: 69px;
             height: 25px; } }
     footer article .logo img {
@@ -524,7 +528,9 @@ footer {
       color: #458c7e;
       font-size: 1rem;
       line-height: 1.38rem;
-      letter-spacing: 0.007rem; }
+      letter-spacing: 0.007rem;
+      display: inline-block;
+      width: 90px; }
       footer article .link a:hover {
         color: white; }
     footer article .follow ul {
