@@ -44,7 +44,7 @@ body {
 
 header {
   background-color: #3dbfff;
-  background-image: url("/assets/images/photos/image-header.jpg");
+  background-image: url("../../assets/images/photos/image-header.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
