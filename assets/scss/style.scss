@@ -703,22 +703,11 @@ footer{
            .follow{
                 @extend %sectionFooter;
 
-                ul{
-                    @extend %ul;
-                    margin: 0 auto;
-
-                    li{
-                        @include Mobile{
-                            width: 30px;
-                            height: 25px;
-                            margin-left: 10px;
-                            cursor: pointer;
-
-                        
-                        } 
-                    }
+                a{
+                    display: inline-block;
+                    width: 50px;
+                    text-align: center;
                 }
-
            }
     }
 }

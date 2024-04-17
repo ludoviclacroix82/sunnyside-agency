@@ -27,7 +27,7 @@ body {
   background-color: #c0c0c0;
   margin: 0 auto; }
 
-.barlow-semibold, header nav .nav-link, header nav .nav-link a, main .Transform-your-brand article p, main .Stand-out-to-the-right-audience article p, main .graphic-photography article article p, main .testimonials .cards .card .card-content, main .testimonials .cards .card .card-job, footer article .follow ul li {
+.barlow-semibold, header nav .nav-link, header nav .nav-link a, main .Transform-your-brand article p, main .Stand-out-to-the-right-audience article p, main .graphic-photography article article p, main .testimonials .cards .card .card-content, main .testimonials .cards .card .card-job {
   font-family: "Barlow", sans-serif;
   font-weight: 600;
   font-style: normal; }
@@ -498,30 +498,6 @@ footer {
         height: 206px; } }
     footer article .logo, footer article .link, footer article .follow {
       padding: 20px 0; }
-    footer article .follow ul {
-      width: 100%;
-      height: 25px;
-      list-style-type: none;
-      text-align: center;
-      display: flex;
-      justify-content: center; }
-      @media (max-width: 640px) {
-        footer article .follow ul {
-          width: 297px;
-          height: 25px; } }
-      footer article .follow ul li {
-        float: left;
-        margin-left: 30px;
-        display: block;
-        font-size: 1rem;
-        line-height: 1.38rem;
-        letter-spacing: 0.007rem; }
-        footer article .follow ul li:hover img {
-          filter: brightness(100); }
-        @media (max-width: 640px) {
-          footer article .follow ul li {
-            width: 69px;
-            height: 25px; } }
     footer article .logo img {
       filter: invert(167) sepia(40) brightness(0%); }
     footer article .link a {
@@ -533,13 +509,9 @@ footer {
       width: 90px; }
       footer article .link a:hover {
         color: white; }
-    footer article .follow ul {
-      margin: 0 auto; }
-      @media (max-width: 640px) {
-        footer article .follow ul li {
-          width: 30px;
-          height: 25px;
-          margin-left: 10px;
-          cursor: pointer; } }
+    footer article .follow a {
+      display: inline-block;
+      width: 50px;
+      text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
