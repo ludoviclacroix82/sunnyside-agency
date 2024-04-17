@@ -513,5 +513,7 @@ footer {
       display: inline-block;
       width: 50px;
       text-align: center; }
+      footer article .follow a:hover {
+        filter: brightness(100); }
 
 /*# sourceMappingURL=style.css.map */
