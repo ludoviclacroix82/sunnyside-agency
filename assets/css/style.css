@@ -9,7 +9,8 @@ body {
   font-size: 18px; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #000; }
 
 a:hover, a:visited, a:focus {
   color: #000; }
@@ -26,23 +27,27 @@ body {
   background-color: #c0c0c0;
   margin: 0 auto; }
 
-.barlow-semibold, header nav .nav-link, main .Transform-your-brand article p, main .Stand-out-to-the-right-audience article p, main .graphic-photography article article p, main .testimonials .cards .card .card-content, main .testimonials .cards .card .card-job, footer article .link ul li, footer article .follow ul li {
+.barlow-semibold, header nav .nav-link, header nav .nav-link a, main .Transform-your-brand article p, main .Stand-out-to-the-right-audience article p, main .graphic-photography article article p, main .testimonials .cards .card .card-content, main .testimonials .cards .card .card-job, footer article .link ul li, footer article .follow ul li {
   font-family: "Barlow", sans-serif;
   font-weight: 600;
   font-style: normal; }
 
-.Fraunces-bold, header nav .nav-link ul .contact a {
+.Fraunces-bold {
   font-family: "Fraunces", sans-serif;
   font-weight: 700;
   font-style: normal; }
 
-.Fraunces-black, header .wrap, main .Transform-your-brand article h2, main .Stand-out-to-the-right-audience article h2, main .Transform-your-brand article button, main .Stand-out-to-the-right-audience article button, main .graphic-photography article article h2, main .testimonials h2, main .testimonials .cards .card .card-name {
+.Fraunces-black, header .wrap, main .Transform-your-brand article h2, main .Stand-out-to-the-right-audience article h2, main .Transform-your-brand article button, main .Stand-out-to-the-right-audience article button, main .graphic-photography article article h3, main .testimonials h2, main .testimonials .cards .card .card-name {
   font-family: "Fraunces", sans-serif;
   font-weight: 900;
   font-style: normal; }
 
 header {
   background-color: #3dbfff;
+  background-image: url("/assets/images/photos/image-header.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   height: 800px;
   display: flex;
   flex-direction: column; }
@@ -91,7 +96,10 @@ header {
           height: 329px;
           background-color: white;
           color: #818498;
-          text-align: center; }
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          flex-direction: column; }
           header nav .nav-link:before {
             content: '';
             width: 0;
@@ -102,58 +110,24 @@ header {
             position: relative;
             bottom: 30px;
             left: 305px; } }
-      header nav .nav-link ul {
-        list-style-type: none;
-        line-height: 40px; }
-        @media (max-width: 640px) {
-          header nav .nav-link ul {
-            float: none;
-            width: 329px;
-            height: 280px;
-            display: grid; } }
-        header nav .nav-link ul li {
-          margin-left: 40px;
-          float: left;
-          font-size: 1rem;
-          line-height: 1.38rem;
-          letter-spacing: 0.007rem;
-          cursor: pointer; }
-          @media (max-width: 640px) {
-            header nav .nav-link ul li {
-              float: none;
-              line-height: 40px;
-              color: #818498;
-              display: flex;
-              justify-content: center;
-              margin-left: 0; }
-              header nav .nav-link ul li a {
-                color: #818498 !important; } }
-          header nav .nav-link ul li a {
-            color: white; }
-        header nav .nav-link ul .contact a {
-          background-color: white;
-          color: #23303e;
-          width: 140px;
-          height: 40px;
-          border-radius: 25px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 0.83rem;
-          line-height: 1.38rem;
-          letter-spacing: 0.006rem;
-          position: relative;
-          bottom: 10px;
-          transition: all 0.8s; }
-          header nav .nav-link ul .contact a:hover {
-            color: white;
-            background-color: rgba(255, 255, 255, 0.5);
-            transition: all 0.8s; }
-          @media (max-width: 640px) {
-            header nav .nav-link ul .contact a {
-              background-color: #fad400;
-              bottom: 0;
-              color: #23303e; } }
+      header nav .nav-link a {
+        font-size: 1rem;
+        line-height: 1.38rem;
+        letter-spacing: 0.007rem;
+        margin-left: 50px;
+        color: white; }
+      header nav .nav-link .contact {
+        background-color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        color: #23303e;
+        font-size: 0.83rem;
+        line-height: 1.38rem;
+        letter-spacing: 0.006rem;
+        transition: all 0.8s; }
+        header nav .nav-link .contact:hover {
+          background-color: rgba(255, 255, 255, 0.5);
+          color: white; }
     header nav .nav-mobile {
       width: 50px;
       display: none; }
@@ -206,13 +180,13 @@ header {
         top: 25%;
         letter-spacing: 0.34rem;
         line-height: 2.74rem; } }
-    header .wrap figure {
+    header .wrap img {
       width: 30px;
       height: 107px;
       align-items: center;
-      margin-top: 150px; }
+      margin-top: 100px; }
       @media (max-width: 640px) {
-        header .wrap figure {
+        header .wrap img {
           margin-top: 120px; } }
 
 main {
@@ -352,13 +326,13 @@ main {
           margin: 0 auto;
           width: 327px;
           height: 143px; } }
-      main .graphic-photography article article h2 {
+      main .graphic-photography article article h3 {
         letter-spacing: 0.01rem;
         line-height: 1.91rem;
         font-size: 1.4rem;
         padding: 20px 0; }
         @media (max-width: 640px) {
-          main .graphic-photography article article h2 {
+          main .graphic-photography article article h3 {
             margin: 0 auto;
             width: 221px;
             height: 35px;

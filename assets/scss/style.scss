@@ -31,6 +31,10 @@ header{
     $headerHeigth:800px !default;    
 
     background-color: hsl(199.79deg, 100% ,61.96%);
+    background-image: url('/assets/images/photos/image-header.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     height: $headerHeigth;
     display: flex;
     flex-direction: column;
@@ -68,7 +72,6 @@ header{
                 grid-area: navLogo;
                 padding-left: 10px;
             }
-
          }
         .nav-link{
             @extend %navDefault;
@@ -79,7 +82,7 @@ header{
             text-align: right;
             display: flex;
             justify-content: right;
-
+            
             @include Mobile{      
                 opacity: 0;  
                 transition: opacity 0.8s;      
@@ -92,6 +95,9 @@ header{
                 background-color: $neutralWhite;
                 color: $neutralDarkGrayishBlue;
                 text-align: center;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
 
                 &:before{
                     content: '';
@@ -104,73 +110,28 @@ header{
                     bottom: 30px;
                     left: 305px;
                 }                
-            }           
-            
-            ul{
-                list-style-type: none;
-                line-height: 40px;
+            }         
+            a{
+                @extend .barlow-semibold;
 
-                @include Mobile{
-                    float: none;
-                    width: 329px;
-                    height: 280px;
-                    display: grid;
-                }
-
-                li{
-                    margin-left: 40px;
-                    float: left;
-                    font-size: 1rem;
-                    line-height: 1.38rem;
-                    letter-spacing: 0.007rem; 
-                    cursor: pointer;
-
-                    @include Mobile{
-                        float: none;
-                        line-height: 40px;
-                        color: $neutralDarkGrayishBlue;
-                        display: flex;
-                        justify-content: center;
-                         margin-left: 0; 
-                         
-                        a{
-                        color: $neutralDarkGrayishBlue !important;
-                        }
-                    }
-                    a{
-                        color: $neutralWhite;
-                        }
-                }
-                .contact{
-                    a{
-                    @extend .Fraunces-bold;
-                    background-color: $neutralWhite ;
-                    color:$neutralVeryDarkDesaturatedBlue ;
-                    width: 140px;
-                    height: 40px;
-                    border-radius: 25px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 0.83rem; 
-                    line-height: 1.38rem;
-                    letter-spacing: 0.006rem; 
-                    position: relative;
-                    bottom: 10px;
-                    transition: all 0.8s;
-
-                    &:hover{
-                        color: $neutralWhite;
-                        background-color: $contactHoverWhite;
-                        transition: all 0.8s;
-                    }
-
-                    @include Mobile{
-                        background-color: $primaryYellow ;
-                        bottom: 0;
-                        color:$neutralVeryDarkDesaturatedBlue;
-                    }
-                    }                                        
+                font-size: 1rem;
+                line-height: 1.38rem;
+                letter-spacing: 0.007rem;
+                margin-left: 50px;
+                color: $neutralWhite;
+            }
+            .contact{
+                background-color: $neutralWhite;
+                padding: 10px 20px;
+                border-radius: 25px;
+                color:$neutralVeryDarkDesaturatedBlue;
+                font-size: 0.83rem;
+                line-height: 1.38rem;
+                letter-spacing: 0.006rem;
+                transition: all 0.8s;
+                &:hover{
+                   background-color: $contactHoverWhite; 
+                   color:$neutralWhite;
                 }
             }
         }   
@@ -237,11 +198,11 @@ header{
             line-height: 2.74rem;
         }
 
-        figure {
+        img {
             width: 30px;
             height: 107px;
             align-items: center;
-            margin-top: 150px;
+            margin-top: 100px;
 
             @include Mobile{
                 margin-top: 120px;  
@@ -460,7 +421,7 @@ main{
                     height: 143px;           
                 }
 
-                h2{
+                h3{
                     @extend .Fraunces-black;
                     letter-spacing: 0.01rem;
                     line-height: 1.91rem;
