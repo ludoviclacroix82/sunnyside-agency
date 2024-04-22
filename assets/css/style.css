@@ -462,7 +462,7 @@ main {
     height: 447px; }
     @media (max-width: 640px) {
       main .gallery {
-        height: auto; } }
+        height: 447px; } }
     main .gallery article {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
