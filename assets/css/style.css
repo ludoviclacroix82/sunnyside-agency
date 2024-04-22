@@ -474,8 +474,9 @@ main {
           grid-template-columns: repeat(2, 1fr); } }
       main .gallery article img {
         width: 100%;
-        height: 100%;
-        object-fit: cover; }
+        height: 223.5px;
+        object-fit: cover;
+        object-position: center; }
 
 footer {
   width: auto;
