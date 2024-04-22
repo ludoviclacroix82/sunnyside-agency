@@ -462,7 +462,7 @@ main {
     height: 447px; }
     @media (max-width: 640px) {
       main .gallery {
-        height: auto; } }
+        height: 447px; } }
     main .gallery article {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -475,7 +475,11 @@ main {
       main .gallery article img {
         width: 100%;
         height: 100%;
-        object-fit: cover; }
+        object-fit: cover;
+        object-position: center; }
+        @media (max-width: 640px) {
+          main .gallery article img {
+            height: 223.5px !important; } }
 
 footer {
   width: auto;
