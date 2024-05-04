@@ -18,6 +18,6 @@ https://ludoviclacroix82.github.io/sunnyside-agency/
 
 ###  Code Review
 Create branch recette.
-- modification navagiation : delete balise "li"
-- Change de header: Add background image
-- Delete de balise "figure" for more image.
+- Correcting the navigation by removing the "li" tag.
+- Adding a background image to the header.
+- Removing the "figure" tag to include more images.
