@@ -14,6 +14,8 @@ Use the DRY principle
 ### Github page:
 https://ludoviclacroix82.github.io/sunnyside-agency/
 
+<img src="https://raw.githubusercontent.com/becodeorg/CRL-KELLER-7/main/2.PROJECTS/1.Sunnyside/desktop-preview.jpg?token=GHSAT0AAAAAACRV5D7XRN4BRNXCEXW4Z42WZRWAEWA">
+
 ###  Code Review
 Create branch recette.
 - modification navagiation : delete balise "li"
